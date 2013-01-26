@@ -2,7 +2,7 @@
   "version": "0.1",
   "name": "StockWatcher",
   "description": "Track your favourite stocks",
-  "launch_path": "/index.html",
+  "launch_path": "http://xadhix.github.com/stockwatcher/",
   "icons": {
     "16": "/img/icons/mortar-16.png",
     "48": "/img/icons/mortar-48.png",

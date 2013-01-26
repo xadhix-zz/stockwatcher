@@ -1,4 +1,4 @@
-<b>Stories: </b> <input type='text' size='15' id='story' value='SAP'/><br/><br/>
+<b>Company: </b> <input type='text' size='15' id='story' value='SAP'/><br/><br/>
 <button id='get_stories'>Get Quotes</button>
 <div id='results'></div>
 <script src="http://yui.yahooapis.com/3.8.0/build/yui/yui-min.js"></script>
@@ -12,7 +12,7 @@ YUI().use('node', 'event', 'yql', function(Y) {
   Y.one("#get_stories").on('click',function() {
     var stories = "<div><ul>";
     var story = Y.one('#story').get('value') || 'SAP';
-    var news_url = "http://finance.yahoo.com/q/hp?s="+story+"&a=00&b=01&c=2013&d=00&e=25&f=2013&g=d";
+    var news_url = "http://finance.yahoo.com/q/hp?s="+story+"&a=00&b=23&c=2013&d=00&e=25&f=2013&g=d";
     var yql_query = "select * from html where url='" + news_url + "'";
     yql_query += " and xpath='//table[@class=\"yfnc_datamodoutline1\"]'";
     Y.YQL(yql_query, function(response) {
@@ -38,17 +38,13 @@ YUI().use('node', 'event', 'yql', function(Y) {
     title:'Date',
     axes:{
         xaxis:{
-            renderer:$.jqplot.DateAxisRenderer
+            renderer:$.jqplot.DateAxisRenderer,
+			tickOptions:{formatString:"%b %#d %y"},min:"Jan 22 2013",tickInterval:"1 day"
         }
     },
     series:[{lineWidth:4, markerOptions:{style:'circle'}}]
   });
     });
   }); 
-});  
-
-
-$(document).ready(function(){
-
-});     
+});
 </script>
