@@ -1,9 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+</head>
+<body>
 <b>Company: </b> <input type='text' size='15' id='story' value='SAP'/><br/><br/>
-<button id='get_stories'>Get Quotes</button>
+<input type="button" id='get_stories' value="Get Quotes"/>
 <div id='results'></div>
 <script src="http://yui.yahooapis.com/3.8.0/build/yui/yui-min.js"></script>
 <script type="text/javascript" src="dist/jquery.min.js"></script>
 <script type="text/javascript" src="dist/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="dist/jquery-ui-1.10.0.custom.js"></script>
+
 <script type="text/javascript" src="dist/plugins/jqplot.dateAxisRenderer.min.js"></script>
 <link rel="stylesheet" type="text/css" hrf="dist/jquery.jqplot.min.css" />
 <script>
@@ -47,4 +55,9 @@ YUI().use('node', 'event', 'yql', function(Y) {
     });
   }); 
 });
+$(document).ready(function(){
+$("#get_stories").button();
+});
 </script>
+</body>
+</html>
